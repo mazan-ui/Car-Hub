@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Car Hub | New Cars in Pakistan</title>
+  <meta name="description" content="Car Hub - Suzuki Alto, Honda City and Honda Civic with current prices. Made by Mazan.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚗</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="loading">
+
+  <!-- ===== Intro: a man inspects the car and rates it 100% ===== -->
+  <div id="intro">
+    <div class="stars"></div>
+    <svg id="scene" viewBox="0 0 800 420" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+      <defs>
+        <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#e5322d"/><stop offset="1" stop-color="#8f1511"/>
+        </linearGradient>
+        <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#9fc4de"/><stop offset="1" stop-color="#2b3a4a"/>
+        </linearGradient>
+        <linearGradient id="beam" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#ffe9a8" stop-opacity=".75"/><stop offset="1" stop-color="#ffe9a8" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="road" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#1a1d26"/><stop offset="1" stop-color="#0a0b0f"/>
+        </linearGradient>
+      </defs>
+
+      <!-- far city skyline -->
+      <g fill="#171a24">
+        <rect x="20" y="200" width="50" height="120"/><rect x="80" y="170" width="40" height="150"/>
+        <rect x="130" y="215" width="60" height="105"/><rect x="560" y="185" width="55" height="135"/>
+        <rect x="625" y="150" width="45" height="170"/><rect x="680" y="205" width="70" height="115"/>
+      </g>
+      <!-- street lamp -->
+      <g>
+        <rect x="95" y="130" width="6" height="190" fill="#2a2f3d"/>
+        <rect x="95" y="128" width="46" height="6" fill="#2a2f3d"/>
+        <ellipse cx="136" cy="140" rx="14" ry="5" fill="#ffb020"/>
+        <polygon points="122,142 150,142 175,320 97,320" fill="#ffb020" opacity=".08"/>
+      </g>
+      <!-- road -->
+      <rect x="0" y="318" width="800" height="102" fill="url(#road)"/>
+      <g class="road-dash"><rect x="0" y="372" width="60" height="5" fill="#f2efe8" opacity=".5"/><rect x="120" y="372" width="60" height="5" fill="#f2efe8" opacity=".5"/><rect x="240" y="372" width="60" height="5" fill="#f2efe8" opacity=".5"/><rect x="360" y="372" width="60" height="5" fill="#f2efe8" opacity=".5"/><rect x="480" y="372" width="60" height="5" fill="#f2efe8" opacity=".5"/><rect x="600" y="372" width="60" height="5" fill="#f2efe8" opacity=".5"/><rect x="720" y="372" width="60" height="5" fill="#f2efe8" opacity=".5"/></g>
+
+      <!-- the car (faces right) -->
+      <g id="car">
+        <ellipse cx="460" cy="334" rx="230" ry="12" fill="#000" opacity=".5"/>
+        <polygon id="beamLight" points="655,268 800,235 800,320 655,285" fill="url(#beam)" opacity="0"/>
+        <path d="M260 304 L260 274 Q262 256 288 252 L345 242 L395 206 Q410 196 432 196 L540 196 Q566 196 582 216 L606 246 L640 254 Q662 258 662 282 L662 304 Z" fill="url(#body)"/>
+        <path d="M388 240 L414 214 L478 214 L478 240 Z" fill="url(#glass)"/>
+        <path d="M490 214 L544 214 L572 240 L490 240 Z" fill="url(#glass)"/>
+        <rect x="484" y="214" width="4" height="60" fill="#5c0d0b"/>
+        <rect x="500" y="262" width="26" height="5" rx="2" fill="#f2efe8" opacity=".85"/>
+        <rect x="262" y="262" width="14" height="12" fill="#ff5a4d" opacity=".9"/>
+        <ellipse id="headlight" cx="652" cy="272" rx="11" ry="7" fill="#fff4c4" opacity=".35"/>
+        <rect x="262" y="298" width="400" height="8" fill="#1b1b1f"/>
+        <g class="wheel" transform="translate(335 306)"><circle r="33" fill="#0d0d10"/><circle r="20" fill="#9aa1ad"/><g class="spin"><rect x="-2" y="-18" width="4" height="36" fill="#454b57"/><rect x="-18" y="-2" width="36" height="4" fill="#454b57"/></g></g>
+        <g class="wheel" transform="translate(592 306)"><circle r="33" fill="#0d0d10"/><circle r="20" fill="#9aa1ad"/><g class="spin"><rect x="-2" y="-18" width="4" height="36" fill="#454b57"/><rect x="-18" y="-2" width="36" height="4" fill="#454b57"/></g></g>
+      </g>
+
+      <!-- the inspector (feet at 0,0) -->
+      <g id="man" style="transform: translate(-80px, 372px)">
+        <g transform="scale(1.35)">
+          <g class="leg back"><rect x="-8" y="-48" width="9" height="48" rx="4" fill="#232a3b"/><rect x="-10" y="-5" width="14" height="5" rx="2" fill="#0b0b0e"/></g>
+          <g class="leg front"><rect x="0" y="-48" width="9" height="48" rx="4" fill="#2d3650"/><rect x="-2" y="-5" width="14" height="5" rx="2" fill="#0b0b0e"/></g>
+          <rect x="-12" y="-96" width="24" height="52" rx="8" fill="#ffb020"/>
+          <rect x="-12" y="-62" width="24" height="5" fill="#d98f00"/>
+          <circle cx="0" cy="-108" r="11" fill="#e8b48a"/>
+          <path d="M-12 -111 Q0 -128 12 -111 L12 -108 L-12 -108 Z" fill="#f2efe8"/>
+          <g class="arm" id="arm"><rect x="2" y="-92" width="8" height="34" rx="4" fill="#e8b48a" transform="rotate(-8 6 -92)"/>
+            <g id="glassTool" opacity="0"><circle cx="20" cy="-56" r="9" fill="rgba(180,220,255,.25)" stroke="#f2efe8" stroke-width="3"/><line x1="26" y1="-50" x2="34" y2="-40" stroke="#f2efe8" stroke-width="4" stroke-linecap="round"/></g>
+          </g>
+        </g>
+      </g>
+
+      <!-- checklist -->
+      <g id="checklist" opacity="0" transform="translate(40 40)">
+        <rect width="190" height="150" rx="10" fill="#0f1119" stroke="#ffb020" stroke-width="2" opacity=".95"/>
+        <text x="16" y="28" fill="#ffb020" font-family="Barlow Condensed, sans-serif" font-size="20" font-weight="700">Inspection report</text>
+        <g font-family="Barlow, sans-serif" font-size="15" fill="#f2efe8">
+          <text x="16" y="56">Body &amp; paint</text><text class="tick" x="160" y="56" fill="#3ddc84">&#10003;</text>
+          <text x="16" y="82">Engine</text><text class="tick" x="160" y="82" fill="#3ddc84">&#10003;</text>
+          <text x="16" y="108">Interior</text><text class="tick" x="160" y="108" fill="#3ddc84">&#10003;</text>
+          <text x="16" y="134">Comfort</text><text class="tick" x="160" y="134" fill="#3ddc84">&#10003;</text>
+        </g>
+      </g>
+    </svg>
+
+    <div id="introText">Inspector is checking the car...</div>
+    <div id="rating"><span id="ratingNum">0</span><small>%</small><em>Rated</em></div>
+    <div id="introBrand">Car Hub</div>
+    <button id="skipIntro" type="button">Skip intro</button>
+  </div>
+
+  <!-- ===== Header ===== -->
+  <header id="top">
+    <a class="logo" href="#home" aria-label="Car Hub home">
+      <svg viewBox="0 0 64 64" width="38" height="38" aria-hidden="true"><circle cx="32" cy="32" r="30" fill="#e5322d"/><path d="M12 38 L18 28 Q20 24 26 24 L40 24 Q45 24 48 29 L53 36 L53 42 L11 42 Z" fill="#fff"/><circle cx="22" cy="43" r="5" fill="#12141a" stroke="#fff" stroke-width="2"/><circle cx="42" cy="43" r="5" fill="#12141a" stroke="#fff" stroke-width="2"/></svg>
+      <span>Car Hub</span>
+    </a>
+    <nav id="nav">
+      <a href="#cars">Cars</a>
+      <a href="#why">Why us</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="wa-btn" id="logoWhatsapp" href="#" target="_blank" rel="noopener">WhatsApp</a>
+    <button id="menuBtn" aria-label="Open menu" type="button"><span></span><span></span><span></span></button>
+  </header>
+
+  <main>
+    <!-- ===== Hero ===== -->
+    <section id="home" class="hero">
+      <div class="speed-lines"></div>
+      <div class="hero-text">
+        <h1>Apni agli gari<br>yahan se chuniye.</h1>
+        <p>Suzuki Alto, Honda City aur Honda Civic. Latest prices, asaan rabta, aur seedha WhatsApp par baat.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#cars">Gariyan dekhein</a>
+          <a class="btn ghost" id="heroWhatsapp" href="#" target="_blank" rel="noopener">WhatsApp par poochein</a>
+        </div>
+      </div>
+      <div class="hero-car">
+        <img src="/images/civic.jpg" alt="Honda Civic">
+      </div>
+    </section>
+
+    <section class="stats">
+      <div><b data-count="3">0</b><span>Models ready</span></div>
+      <div><b data-count="100">0</b><span>Percent checked</span></div>
+      <div><b data-count="24">0</b><span>Hour reply on WhatsApp</span></div>
+      <div><b data-count="1">0</b><span>Click to contact</span></div>
+    </section>
+
+    <!-- ===== Cars ===== -->
+    <section id="cars" class="section">
+      <div class="section-head">
+        <h2>Hamari gariyan</h2>
+        <input id="search" type="search" placeholder="Search: Honda, Alto, Civic..." aria-label="Search cars">
+      </div>
+      <p class="price-note">Prices Pakistan mein ex-factory hain (October 2026). Freight, tax aur registration alag ho sakte hain, aur prices badalti rehti hain.</p>
+      <div id="carGrid" class="grid"></div>
+      <p id="emptyMsg" class="empty" hidden>Is naam ki koi gari nahi mili. Doosra naam try karein.</p>
+    </section>
+
+    <!-- ===== Why ===== -->
+    <section id="why" class="section dark-band">
+      <h2>Car Hub kyun?</h2>
+      <div class="why-grid">
+        <article><h3>Saaf prices</h3><p>Har gari ke saath current price pehle se likhi hoti hai. Koi chhupi hui baat nahi.</p></article>
+        <article><h3>Seedha rabta</h3><p>Ek click par WhatsApp khulta hai aur gari ka naam khud likha aata hai.</p></article>
+        <article><h3>Checked cars</h3><p>Jaise intro mein dekha, har gari ki jaanch ke baad hi list hoti hai.</p></article>
+      </div>
+    </section>
+
+    <!-- ===== About ===== -->
+    <section id="about" class="section about">
+      <div>
+        <h2>Car Hub ke baare mein</h2>
+        <p>Car Hub ek chhota sa online showroom hai jahan aap Pakistan ki sab se zyada pasand ki jane wali gariyan ek jagah dekh sakte hain. Humara maqsad simple hai: gari ki tasveer, uski sahi qeemat aur baat karne ka asaan tareeqa, sab ek page par.</p>
+        <p>Aap Alto jaisi kam kharch wali gari dhoondh rahe hon, City jaisi family sedan, ya Civic jaisi sporty gari, hum aapko bina ghumaye seedhi maloomat dete hain. Pasand aaye to WhatsApp par message karein, hum jaldi jawab dete hain.</p>
+        <p class="by">Is website ko Mazan ne banaya hai.</p>
+      </div>
+      <ul class="about-list">
+        <li>Pakistan ki market ke hisaab se prices</li>
+        <li>Mobile par bhi poori tarah chalne wala design</li>
+        <li>Admin panel se nayi gariyan aur prices update</li>
+      </ul>
+    </section>
+
+    <!-- ===== Contact ===== -->
+    <section id="contact" class="section contact">
+      <h2>Rabta karein</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Phone</h3>
+          <a id="phoneLink" href="tel:03475536181">03475536181</a>
+        </div>
+        <div class="contact-card">
+          <h3>WhatsApp</h3>
+          <a id="contactWhatsapp" href="#" target="_blank" rel="noopener">Message bhejein</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>&copy; <span id="year"></span> Car Hub. All rights reserved.</span>
+    <span>Made by Mazan</span>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Car Hub Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    body { padding: 0; }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 40px 5vw 80px; }
+    .top { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
+    .top h1 { font-size: 40px; }
+    .box { background: var(--asphalt-2); border: 1px solid #272c3a; border-radius: 12px; padding: 26px; }
+    label { display: block; font-size: 14px; color: var(--steel); margin: 14px 0 6px; }
+    input, textarea { width: 100%; background: #0f1118; border: 1px solid #2c3140; color: var(--chalk); padding: 11px 14px; border-radius: 6px; font-family: var(--body); font-size: 15px; }
+    input:focus, textarea:focus { border-color: var(--amber); outline: none; }
+    .two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    button { font-family: var(--body); font-size: 15px; font-weight: 600; border: 0; border-radius: 6px; padding: 11px 20px; cursor: pointer; }
+    .b-main { background: var(--red); color: #fff; }
+    .b-alt { background: #2c3140; color: var(--chalk); }
+    .b-del { background: transparent; color: #ff7a73; border: 1px solid #ff7a73; }
+    .login { max-width: 400px; margin: 14vh auto 0; }
+    .login h1 { margin-bottom: 8px; }
+    .msg { margin-top: 12px; font-size: 14px; min-height: 20px; }
+    .msg.err { color: #ff7a73; } .msg.ok { color: #3ddc84; }
+    .row { display: grid; grid-template-columns: 90px 1fr auto; gap: 16px; align-items: center; padding: 14px 0; border-bottom: 1px solid #272c3a; }
+    .row:last-child { border-bottom: 0; }
+    .row img { width: 90px; height: 64px; object-fit: cover; border-radius: 6px; background: #fff; }
+    .row h3 { font-size: 24px; } .row p { color: var(--amber); font-weight: 600; }
+    .row .acts { display: flex; gap: 8px; }
+    #preview { max-width: 200px; margin-top: 10px; border-radius: 6px; }
+    #formBox { display: none; margin-bottom: 30px; }
+    @media (max-width: 640px) { .two { grid-template-columns: 1fr; } .row { grid-template-columns: 70px 1fr; } .row .acts { grid-column: 1 / -1; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <!-- login -->
+    <div id="loginView" class="login box">
+      <h1>Admin login</h1>
+      <p style="color:var(--steel)">Car Hub control panel</p>
+      <form id="loginForm">
+        <label for="username">Username</label>
+        <input id="username" autocomplete="username" required>
+        <label for="password">Password</label>
+        <input id="password" type="password" autocomplete="current-password" required>
+        <button class="b-main" style="margin-top:18px;width:100%">Login</button>
+        <div id="loginMsg" class="msg err"></div>
+      </form>
+    </div>
+
+    <!-- dashboard -->
+    <div id="dashView" hidden>
+      <div class="top">
+        <h1>Car Hub Admin</h1>
+        <div style="display:flex;gap:8px">
+          <button class="b-main" id="addBtn" type="button">Add new car</button>
+          <a href="/" class="b-alt" style="padding:11px 20px;border-radius:6px;font-weight:600">View website</a>
+          <button class="b-alt" id="logoutBtn" type="button">Logout</button>
+        </div>
+      </div>
+
+      <div id="formBox" class="box">
+        <h2 id="formTitle" style="font-size:30px">Add car</h2>
+        <form id="carForm">
+          <input type="hidden" id="carId">
+          <div class="two">
+            <div><label for="name">Car name</label><input id="name" required placeholder="Toyota Yaris"></div>
+            <div><label for="brand">Brand</label><input id="brand" required placeholder="Toyota"></div>
+          </div>
+          <div class="two">
+            <div><label for="price">Price (PKR, numbers only)</label><input id="price" type="number" min="0" required placeholder="4500000"></div>
+            <div><label for="priceNote">Price note</label><input id="priceNote" placeholder="Starting price (ex-factory)"></div>
+          </div>
+          <label for="description">Description</label>
+          <textarea id="description" rows="3"></textarea>
+          <div class="two">
+            <div><label for="engine">Engine</label><input id="engine" placeholder="1.5L"></div>
+            <div><label for="transmission">Transmission</label><input id="transmission" placeholder="CVT Automatic"></div>
+          </div>
+          <div class="two">
+            <div><label for="fuel">Fuel</label><input id="fuel" value="Petrol"></div>
+            <div><label for="mileage">Mileage</label><input id="mileage" placeholder="14-16 km/L"></div>
+          </div>
+          <label for="imageFile">Car picture (upload) or paste an image link below</label>
+          <input id="imageFile" type="file" accept="image/*">
+          <input id="imageUrl" placeholder="https://... or /images/alto.webp" style="margin-top:8px">
+          <img id="preview" alt="" hidden>
+          <div style="display:flex;gap:10px;margin-top:22px">
+            <button class="b-main" id="saveBtn">Save car</button>
+            <button class="b-alt" id="cancelBtn" type="button">Cancel</button>
+          </div>
+          <div id="formMsg" class="msg"></div>
+        </form>
+      </div>
+
+      <div class="box" id="list"></div>
+    </div>
+  </div>
+  <script src="/js/admin.js"></script>
+</body>
+</html>
